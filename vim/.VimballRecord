@@ -1,0 +1,1 @@
+ReplaceWithRegister-1.43.vmb: call delete('/Users/hrl/.vim/autoload/ReplaceWithRegister.vim')|call delete('/Users/hrl/.vim/plugin/ReplaceWithRegister.vim')|call delete('/Users/hrl/.vim/doc/ReplaceWithRegister.txt')

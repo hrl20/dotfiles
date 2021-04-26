@@ -1,0 +1,22 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "vim/pack/vendor/start/ack.vim"]
+	path = vim/pack/vendor/start/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/pack/vendor/start/ctrlp.vim"]
+	path = vim/pack/vendor/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/pack/vendor/start/nerdtree"]
+	path = vim/pack/vendor/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "vim/pack/vendor/start/vim-easymotion"]
+	path = vim/pack/vendor/start/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion.git
+[submodule "vim/pack/vendor/start/vim-fugitive"]
+	path = vim/pack/vendor/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/pack/vendor/start/vim-surround"]
+	path = vim/pack/vendor/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git

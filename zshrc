@@ -1,3 +1,8 @@
+# Allow local customizations in the ~/.zshrc_local_before file
+if [ -f ~/.zshrc_local_before ]; then
+    source ~/.zshrc_local_before
+fi
+
 # start typing + [Up-Arrow] - fuzzy find history forward
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
     autoload -U up-line-or-beginning-search
@@ -10,5 +15,10 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
     zle -N down-line-or-beginning-search
     bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
 
-
+# Allow local customizations in the ~/.zshrc_local_after file
+if [ -f ~/.zshrc_local_after ]; then
+    source ~/.zshrc_local_after
+fi

@@ -1,7 +1,12 @@
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
+# Allow local customizations in the ~/.shell_local_before file
+if [ -f ~/.shell_local_before ]; then
+    source ~/.shell_local_before
+fi
+
+source ~/.zshrc
+
+# Allow local customizations in the ~/.shell_local_after file
+if [ -f ~/.shell_local_after ]; then
+    source ~/.shell_local_after
+fi
 

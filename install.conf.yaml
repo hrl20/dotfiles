@@ -8,6 +8,10 @@
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
+    ~/.zprofile:
+    ~/.zshrc:
+    ~/.gitignore_global:
+    ~/.gitconfig:
 
 - create:
     - ~/downloads

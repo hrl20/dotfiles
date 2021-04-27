@@ -1,0 +1,28 @@
+[core]
+	editor = emacs -nw
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[color "grep"]
+  match = cyan bold
+  selected = blue
+  context = normal
+  filename = magenta
+  linenumber = green
+  separator = yellow
+  function = blue
+[alias]
+	lol = log --graph --oneline --decorate --color --all
+[grep]
+  lineNumber = true
+[pretty]
+  line = "%C(auto)%h %<|(60,trunc)%s %C(green)%ad%C(auto)%d"
+  detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ad%n %C(auto)%d%n"
+[core]
+  excludesfile = ~/.gitignore_global
+
+# Allow local customizations in the .gitconfig_local file
+[include]
+  path = ~/.gitconfig_local

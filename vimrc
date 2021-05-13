@@ -19,6 +19,8 @@ set autoindent
 " Disable the default Vim startup message.
 set shortmess+=I
 
+set complete+=kspell
+set completeopt=menuone,longest
 " Show line numbers.
 set number
 
@@ -89,6 +91,12 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 function! CopyPhabLink()
   let lineNumber = line(".")
   let filename = @%
@@ -127,3 +135,5 @@ nnoremap H gT<CR>
 nnoremap L gt<CR>
 
 nnoremap <leader>w :bp\|bd #<CR>
+
+:set tags=/Users/hrl/source/tags

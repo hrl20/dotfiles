@@ -11,6 +11,23 @@
 " `vim -u foo`).
 set nocompatible
 
+"CtrlP setup
+"	cache to have instant search result
+let g:ctrlp_clear_cache_on_exit = 0
+"let g:ctrlp_map = '<A-p>'
+let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmdpalette_execute=1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'node_modules':  'node_modules$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:25'
+
 " Turn on syntax highlighting.
 syntax on
 
@@ -97,12 +114,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-function! CopyPhabLink()
-  let lineNumber = line(".")
-  let filename = @%
-  let root = "https://abnormal.phacility.com/diffusion/1/browse/master/"
-  let @+ = root . filename . "$" . lineNumber
-endfunction
 function! CopyImportStatement()
   let filename = @%
   let pieces = split(filename, "/")
@@ -116,18 +127,8 @@ function! CopyImportAll()
   let path = join(pieces[2:-1], ".")
   let @+ = "from " . path . " import *"
 endfunction
-function! PytestCommand()
-  let filename = @%
-  let pieces = split(filename, "/")
-  let relativeName = join(pieces[2:-1], "/")
-  echo relativeName
-  let @+ = "run_pytests --skip-airflow-db --nomigrations " . relativeName
-endfunction
-nnoremap <leader>y :call CopyPhabLink()<CR>
 nnoremap <leader>i :call CopyImportStatement()<CR>
 nnoremap <leader>I :call CopyImportAll()<CR>
-nnoremap <leader>f :Black<CR>
-nnoremap <leader>p :call PytestCommand()<CR>
 
 let g:ctrlp_working_path_mode = 'rw'
 map <leader>t :NERDTreeToggle<CR>
